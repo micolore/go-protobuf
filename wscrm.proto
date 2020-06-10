@@ -1,0 +1,19 @@
+syntax = "proto3"; //指定语法
+package protobuf;  //指定包名
+
+// 点对点消息发送数据结构
+message PointSendMssage{   //消息模版
+    string MsgId = 1; //定义数据类型
+    string MsgType = 2;
+    bytes MsgData = 3; //定义一个字节类型
+    string SendUid = 4;
+    string RecvUid = 5;
+    string MsgStype = 6;
+    string MsgStime = 7;
+    repeated  string childData =8; // 复杂的对象List
+} 
+
+message DataMessage {
+    string MsgType = 1;
+    PointSendMssage pointSendMssage = 2;
+}
